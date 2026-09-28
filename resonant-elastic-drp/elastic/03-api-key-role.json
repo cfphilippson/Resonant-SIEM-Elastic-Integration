@@ -1,0 +1,14 @@
+{
+  "name": "logstash-resonant-write",
+  "role_descriptors": {
+    "resonant_writer": {
+      "cluster": ["monitor"],
+      "indices": [
+        {
+          "names": ["logs-resonant_credentials_exposure-resonant*"],
+          "privileges": ["auto_configure", "create_doc"]
+        }
+      ]
+    }
+  }
+}

@@ -1,0 +1,7 @@
+# /etc/cron.d/resonant-collector
+# Coleta a cada 8 horas, em horas cheias (00:00, 08:00, 16:00 no horário do servidor).
+# Ajuste QUERY e os caminhos conforme o seu ambiente.
+0 */8 * * * root RESONANT_TOKEN_FILE=/opt/logstash/config/resonant/token QUERY=brand:MINHAMARCA SPOOL=/opt/logstash/config/resonant/spool /usr/bin/python3 /opt/logstash/config/resonant/resonant_cred_collector.py >> /opt/logstash/config/resonant/collector.log 2>&1
+
+# (opcional) limpeza do spool: apaga NDJSON com mais de 3 dias
+5 4 * * * root find /opt/logstash/config/resonant/spool -name '*.ndjson' -mtime +3 -delete

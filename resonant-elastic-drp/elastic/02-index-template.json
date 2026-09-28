@@ -1,0 +1,13 @@
+{
+  "index_patterns": ["logs-resonant_credentials_exposure-resonant*"],
+  "data_stream": {},
+  "priority": 500,
+  "composed_of": ["logs@mappings", "logs@settings", "resonant-finding-mappings"],
+  "template": {
+    "settings": { "index.lifecycle.name": "logs" }
+  },
+  "_meta": {
+    "description": "Data stream de credenciais vazadas Resonant DRP; herda defaults de logs + ILM logs",
+    "managed_by": "resonant"
+  }
+}

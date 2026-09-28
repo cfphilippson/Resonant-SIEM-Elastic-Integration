@@ -1,0 +1,16 @@
+{
+  "template": {
+    "mappings": {
+      "properties": {
+        "resonant": {
+          "properties": {
+            "finding": { "properties": { "published_at": { "type": "date" } } },
+            "breach_date": { "type": "date" }
+          }
+        },
+        "credential": { "properties": { "created_at": { "type": "date" } } }
+      }
+    }
+  },
+  "_meta": { "description": "Campos de data do dataset resonant_credentials_exposure" }
+}
