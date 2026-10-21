@@ -1,0 +1,6 @@
+# /etc/cron.d/resonant-threat-collector
+# Coleta a cada 30 minutos (flock evita execucoes sobrepostas). Ajuste caminhos e INCLUDE_TYPES.
+*/30 * * * * root flock -n /tmp/resonant_threat.lock env RESONANT_TOKEN_FILE=<BASE_DIR>/token SPOOL=<BASE_DIR>/spool_threat INCLUDE_TYPES=6 /usr/bin/python3 <BASE_DIR>/resonant_threat_collector.py >> <LOG_DIR>/resonant_threat_collector.log 2>&1
+
+# Limpeza do spool: NDJSON com mais de 7 dias
+15 3 * * * root find <BASE_DIR>/spool_threat -name 'resonant_threat_*.ndjson' -mtime +7 -delete

@@ -1,0 +1,40 @@
+{
+  "template": {
+    "mappings": {
+      "properties": {
+        "resonant": {
+          "properties": {
+            "brand":    { "type": "keyword" },
+            "source":   { "type": "keyword" },
+            "assignee": { "type": "keyword" },
+            "finding": {
+              "properties": {
+                "uuid":           { "type": "keyword" },
+                "key":            { "type": "keyword" },
+                "title":          { "type": "keyword", "ignore_above": 1024,
+                                    "fields": { "text": { "type": "match_only_text" } } },
+                "published_at":   { "type": "date" },
+                "state_hash":     { "type": "keyword" },
+                "status":         { "type": "long" },
+                "status_name":    { "type": "keyword" },
+                "priority":       { "type": "long" },
+                "priority_name":  { "type": "keyword" },
+                "type":           { "type": "long" },
+                "type_name":      { "type": "keyword" },
+                "digital_assets": { "type": "flattened", "ignore_above": 2048 },
+                "indicators": {
+                  "properties": {
+                    "urls":    { "type": "keyword", "ignore_above": 2048 },
+                    "domains": { "type": "keyword" },
+                    "ips":     { "type": "ip" }
+                  }
+                }
+              }
+            }
+          }
+        }
+      }
+    }
+  },
+  "_meta": { "description": "Tempest Resonant DRP Threat (findings)" }
+}

@@ -1,0 +1,5 @@
+token
+*.ndjson
+*.ndjson.part
+sincedb_*
+spool_threat/

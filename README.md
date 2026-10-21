@@ -2,6 +2,15 @@
 Ingestão do feed de credenciais vazadas (Digital Risk Protection) da API Tempest Resonant / Prospero Suite para um data stream do Elastic, via coletor Python + Logstash — com privacidade por design (signal-only), paginação dinâmica e deduplicação idempotente.
 Autor: Carlos Quintas · SOC | CSIRT | SIEM Tech Leader · LinkedIn @carlosfpquintas
 
+## Módulos
+
+| Módulo | Feed da API Resonant | Data stream |
+|---|---|---|
+| [`resonant-elastic-drp/`](resonant-elastic-drp/) | Credenciais vazadas (`/leaked_credentials`) | `logs-resonant_credentials_exposure-resonant` |
+| [`resonant-drp-threat/`](resonant-drp-threat/) | Ameaças DRP / findings (`/findings/search`) — ex. Exposed Data | `logs-resonant_drp_threat-resonant` |
+
+Os módulos são independentes (coletor, pipeline, data stream e API key próprios) e compartilham apenas o token da API.
+
 Arquitetura
 
 Mostrar Imagem

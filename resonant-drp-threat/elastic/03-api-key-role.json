@@ -1,0 +1,15 @@
+{
+  "name": "logstash-resonant-drp-threat-write",
+  "role_descriptors": {
+    "resonant_drp_threat_writer": {
+      "cluster": ["monitor"],
+      "indices": [
+        {
+          "names": ["logs-resonant_drp_threat-resonant*"],
+          "privileges": ["auto_configure", "create_doc"]
+        }
+      ]
+    }
+  },
+  "metadata": { "integration": "tempest-resonant-drp-threat" }
+}

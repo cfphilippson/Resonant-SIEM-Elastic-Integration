@@ -1,0 +1,15 @@
+{
+  "index_patterns": ["logs-resonant_drp_threat-*"],
+  "data_stream": {},
+  "priority": 200,
+  "composed_of": [
+    "logs@mappings",
+    "logs@settings",
+    "ecs@mappings",
+    "logs@custom",
+    "logs-resonant_drp_threat@custom",
+    "resonant-drp-threat-mappings"
+  ],
+  "ignore_missing_component_templates": ["logs@custom", "logs-resonant_drp_threat@custom"],
+  "_meta": { "description": "Tempest Resonant DRP Threat", "managed_by": "resonant" }
+}
